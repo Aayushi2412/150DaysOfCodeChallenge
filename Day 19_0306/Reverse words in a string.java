@@ -2,6 +2,7 @@
 input : str="Welcome to Coding Ninjas"
 output : st=Ninjas Coding to Welcome"
 */
+//Solution 1
 public class Solution 
 {
 	public static String reverseString(String str) 
@@ -19,4 +20,26 @@ public class Solution
 		return st;
 
 	}
+}
+
+
+
+//Solution 2
+class Solution {
+    public String reverseWords(String s) {
+    
+        String[] str=s.split(" ");
+        StringBuilder sb=new StringBuilder();
+        for(int i=str.length-1;i>=0;i--)
+        {
+            if(str[i]!="")
+            {
+                sb.append(str[i]);   //add word
+                sb.append(" ");  //add space after every word
+            }
+        }
+        return sb.toString().trim();
+        
+        
+    }
 }
