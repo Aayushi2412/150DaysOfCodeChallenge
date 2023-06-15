@@ -1,0 +1,40 @@
+given a binary tree and an integer x, find the path from the root to the leaf node having a value==x;
+
+
+//code
+import java.util.* ;
+import java.io.*; 
+/*   
+    Following is the Binary Tree node structure for referance:
+
+    class TreeNode
+    {
+        int data;
+        TreeNode left, right;
+    
+        public TreeNode(int item)
+        {
+            data = item;
+            left = right = null;
+        }
+    }
+*/
+
+public class Solution {
+    public static ArrayList<Integer> pathInATree(TreeNode root, int x) {
+        // Write your code here..
+        ArrayList<Integer> arr=new ArrayList<>();
+        if(root==null) return arr;
+        findPath(root, arr,x);
+        return arr;
+    }
+    public static boolean findPath(TreeNode root, ArrayList<Integer> arr, int x)
+    {
+        if(root==null) return false;
+        arr.add(root.data);
+        if(root.data==x) return true;
+        if(findPath(root.left,arr,x)|| findPath(root.right, arr, x)) return true;
+        arr.remove(arr.size()-1);
+        return false;
+    }
+}
