@@ -15,20 +15,17 @@ Explanation: There are two ways to climb to the top.
 */
 //code
 class Solution {
-    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        String s1="";   //empty string variable to hold all values of given arrays
-        String s2="";
-        
-        for(int i=0;i<word1.length;i++)
+    public int climbStairs(int n) 
+    { 
+        int[] stairs=new int[n+1];
+        if(n<=2) return n;
+        stairs[0]=0;
+        stairs[1]=1;
+        stairs[2]=2;
+        for(int i=3;i<=n;i++)
         {
-            s1=s1+word1[i];   
+            stairs[i]=stairs[i-1]+stairs[i-2];
         }
-        for(int i=0;i<word2.length;i++)
-        {
-            s2=s2+word2[i];
-        }
-        if(s1.equals(s2))   //if both obtained strings from corresponding arrays are equal
-           return true;
-        return false;
+        return stairs[n];
     }
 }
