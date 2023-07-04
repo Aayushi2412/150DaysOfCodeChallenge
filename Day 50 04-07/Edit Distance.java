@@ -12,6 +12,7 @@ class Solution {
         //memoization 
         //tc=O(m*n)
         int n=word1.length();
+        
         int m=word2.length();
         int[][] dp=new int[n][m];
         for(int[] row: dp) Arrays.fill(row,-1);
