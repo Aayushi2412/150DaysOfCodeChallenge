@@ -1,4 +1,4 @@
-lass Solution {
+class Solution {
     public int change(int amount, int[] coins) {
         
         //memoization
