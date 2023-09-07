@@ -26,8 +26,7 @@ class Sol
           head.next=cur;
           cur=head;
           head=next;
-    }
+        }
       return cur;
     }
-  }
-  }
+}
