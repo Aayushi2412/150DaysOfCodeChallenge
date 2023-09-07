@@ -19,19 +19,15 @@ class Sol
   {
     public ListNode revList(ListNode head)
     {
-      //base case
-      if(head==null || head.next!=null) return head;
-      
-      ListNode prev=head, cur=head.next;
-      while(cur!=null)
+      ListNode cur=null;
+      while(head!=null)
         {
-          ListNode next=cur.next;
-          cur.next=prev;
-          prev=cur;
-          cur=next;
-        }
-      head.next=null;
-      head=prev;
-      retrun head;
+          ListNode next=head.next;
+          head.next=cur;
+          cur=head;
+          head=next;
     }
+      return cur;
+    }
+  }
   }
